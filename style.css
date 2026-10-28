@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #1c1a22; color: #222; font-family: system-ui, "Noto Sans TC", sans-serif; touch-action: none; user-select: none; -webkit-user-select: none; }
+#cv { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+#hud { position: fixed; left: 12px; top: 10px; padding: 6px 12px; border-radius: 10px; background: rgba(255,255,255,0.82); font-size: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+#hud span { opacity: 0.6; margin-left: 6px; font-size: 12px; }
+#hud i { font-style: normal; margin-left: 14px; font-variant-numeric: tabular-nums; }
+#msg { position: fixed; left: 0; right: 0; top: 38%; text-align: center; font-size: 48px; font-weight: 800; color: #fff; text-shadow: 0 3px 0 rgba(0,0,0,0.35), 0 0 18px rgba(0,0,0,0.3); pointer-events: none; }
+#styles { position: fixed; left: 50%; top: 52px; transform: translateX(-50%); display: flex; gap: 6px; padding: 6px; border-radius: 14px; background: rgba(255,255,255,0.78); box-shadow: 0 2px 10px rgba(0,0,0,0.2); max-width: calc(100vw - 24px); overflow-x: auto; }
+#styles button { border: 0; border-radius: 9px; padding: 6px 10px; background: transparent; font: inherit; font-size: 13px; cursor: pointer; white-space: nowrap; color: #333; }
+#styles button span { margin-left: 5px; }
+#styles button.on { background: #333; color: #fff; }
+#help { position: fixed; right: 12px; bottom: 8px; font-size: 12px; color: rgba(0,0,0,0.55); background: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 8px; }
+#touch { display: none; }
+@media (pointer: coarse) {
+  #help { display: none; }
+  #touch { display: block; }
+  #touch button { position: fixed; bottom: 18px; width: 64px; height: 64px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.55); font-size: 24px; }
+  #bl { left: 16px; } #br { left: 92px; } #bj { right: 16px; width: 76px !important; height: 76px !important; }
+  #styles button span { display: none; }
+}
+body[data-style="porcelain"] #hud { color: #1f3f9e; }
+body[data-style="porcelain"] #styles button.on { background: #1f3f9e; }
+body[data-style="riso"] #styles button.on { background: #ff48b0; }
+body[data-style="contour"] #hud { font-family: Georgia, serif; color: #6a4422; }
